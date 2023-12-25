@@ -16,3 +16,5 @@ def convert_audio():
                 write_info(f"Ошибка при запросе к сервису Google Speech Recognition API; {e}\n\n")
             except sr.WaitTimeoutError:
                 write_info("Распознавание речи завершилось по таймеру. В течение тайм-аута звук не получен.\n\n")
+   thread = threading.Thread(target=recognize)
+    thread.start()
