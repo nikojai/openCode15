@@ -4,3 +4,8 @@ from tkinter import scrolledtext
 import speech_recognition as sr
 
 recognizer = sr.Recognizer()
+
+def write_info(text: str) -> None:
+    output_text.config(state=tk.NORMAL)
+    output_text.insert(tk.END, text)
+    output_text.config(state=tk.DISABLED)
