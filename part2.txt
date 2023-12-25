@@ -1,0 +1,18 @@
+def convert_audio():
+    def recognize():
+        with sr.Microphone() as source:
+            write_info("Адаптируем шумы микрофона...\n")
+            recognizer.adjust_for_ambient_noise(source)
+
+            write_info("Говорите...\n")
+
+            try:
+                audio = recognizer.listen(source, timeout=5)
+                text = recognizer.recognize_google(audio, language="ru-RU")
+                write_info(f"\n{text} \n\n")
+            except sr.UnknownValueError:
+                write_info("Не удалось разобрать аудиозапись.\n\n")
+            except sr.RequestError as e:
+                write_info(f"Ошибка при запросе к сервису Google Speech Recognition API; {e}\n\n")
+            except sr.WaitTimeoutError:
+                write_info("Распознавание речи завершилось по таймеру. В течение тайм-аута звук не получен.\n\n")
