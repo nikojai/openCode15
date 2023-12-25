@@ -5,3 +5,8 @@ if __name__ == "__main__":
 
     output_text = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=40, height=30, state=tk.DISABLED)
     output_text.pack(pady=10)
+
+    convert_button = tk.Button(root, text="Запись", command=convert_audio)
+    convert_button.pack(pady=5)
+
+    root.mainloop()
