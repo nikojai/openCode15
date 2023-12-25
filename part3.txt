@@ -1,0 +1,7 @@
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.resizable(width=False, height=False)
+    root.title("Николай Литвин ИКБО-__-__")
+
+    output_text = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=40, height=30, state=tk.DISABLED)
+    output_text.pack(pady=10)
